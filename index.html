@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+	<link rel="stylesheet" type="text/css" href="./js/index.js"/>
+	<script type="text/javascript" src='js/index.js'></script>
+	<script type="text/javascript" src='./lib/jquery-1.11.1.js'>
+		
+	</script>
+</head>
+<body>
+	<input type="number"/><button>请求</button>
+</body>
+<script type="text/javascript">
+	var ipt = document.querySelector('input')
+	var data = {}
+	var int = ''
+	ipt.oninput = function(e) {
+		console.log(e.target.value)
+		intnum = e.target.value
+	}
+	document.querySelector('button').onclick = function() {
+		data.iconid = intnum
+		$.ajax({
+			url: 'http://127.0.0.1:3000/',
+			data: data,
+			success: function(data) {
+				console.log(data)
+			}
+		})
+	}
+</script>
+<!--类是定义对象特质的模板-->
+</html>
