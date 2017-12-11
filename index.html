@@ -24,8 +24,8 @@
 	document.querySelector('button').onclick = function() {
 		data.iconid = intnum
 		$.ajax({
-			url: 'http://127.0.0.1:3000/',
-			data: data,
+			url: 'http://127.0.0.1:3000/' + intnum,
+			type: 'get',
 			success: function(data) {
 				console.log(data)
 			}
